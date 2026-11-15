@@ -1,0 +1,25 @@
+健康追蹤日記 V6｜PWA 安裝版
+==========================
+
+這一包有五個檔案，請全部上傳到 health-tracker 儲存庫的 main 分支「根目錄」：
+  index.html
+  manifest.webmanifest
+  service-worker.js
+  icon-192.png
+  icon-512.png
+
+操作：
+1. 先在舊版網站按「庫存／備份」→「匯出含照片完整備份 JSON」，並保留備份。
+2. GitHub → health-tracker → Add file → Upload files；上傳以上五個檔案。
+   index.html 需覆蓋原本的 index.html（如果 GitHub 的上傳介面不允許同名覆蓋，請在 GitHub 檔案頁使用編輯功能或原有的替換流程）。
+3. Commit changes；確認 Actions 中 pages build and deployment 顯示成功。
+4. Chrome 打開 https://chenhe23689-ui.github.io/health-tracker/
+5. Chrome 的 ⋮ 選單選「安裝應用程式」或「加到主畫面」。如果 Chrome 發出安裝事件，網站「庫存／備份」也會出現「安裝到手機」按鈕。
+6. 未來更新網頁仍維持原網址；先匯出完整備份，再上傳更新版檔案。
+
+更新：
+在「庫存／備份」按「檢查網站更新」。網頁會優先從網路取得最新版；斷線時改用先前快取的頁面。
+注意 PWA 離線使用必須先在線上成功載入並完成快取；不是所有裝置都會顯示相同安裝選項。
+注意健康紀錄留在瀏覽器 localStorage，照片留在 IndexedDB；PWA 不是雲端同步。
+注意不要把 JSON 備份、個人照片或健康紀錄上傳到公開 GitHub 儲存庫。
+注意原網站與安裝後 App 理論上同網域共用站點儲存，但不同瀏覽器 / 不同網站環境未必共享，請先匯出 JSON 備份驗證。
